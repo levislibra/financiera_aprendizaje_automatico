@@ -1,0 +1,22 @@
+<openerp>
+    <data>
+      
+			<!-- Perfil del cliente Group Risk -->
+
+			<record id="partner_aa_form_inherited"  model="ir.ui.view">
+				<field name="name">Extension Partner Nosis form</field>
+				<field name="model">res.partner</field>
+				<field name="inherit_id" ref="financiera_prestamos.partner_form_inherited"/>
+				<field name="arch" type="xml">
+					<xpath expr="//group[@name='risk']" position="inside">
+						<group string="Aprendizaje Automatico" col="2" style="background-color: #E6E6E6">
+							<label for='aa_trainer' string=' '/>
+							<button name="aa_trainer" class="oe_highlight" string="Calcular score" type="object"/>
+							<field name="aa_score"/>
+						</group>
+					</xpath>
+				</field>
+			</record>
+
+    </data>
+  </openerp>

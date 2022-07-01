@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+user_aa_config,aa.config,model_financiera_aa_config,financiera_aprendizaje_automatico.user,1,1,0,0
+manager_aa_config,aa.config,model_financiera_aa_config,financiera_aprendizaje_automatico.manager,1,1,1,1

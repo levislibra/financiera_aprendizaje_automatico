@@ -1,0 +1,53 @@
+<openerp>
+  <data>
+
+    <!-- Financiera App configuracion -->
+
+    <record model="ir.ui.view" id="financiera_aa_config_tree">
+      <field name="name">financiera.aa.config.tree</field>
+      <field name="model">financiera.aa.config</field>
+      <field name="arch" type="xml">
+        <tree create="false" delete="false">
+          <field name="name"/>
+          <field name="company_id" groups="base.group_erp_manager"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="financiera_aa_config_form" model="ir.ui.view">
+        <field name="name">financiera.aa.config.tree</field>
+        <field name="model">financiera.aa.config</field>
+        <field name="arch" type="xml">
+            <form string="Configuracion" create="false" delete="false">
+              <sheet>
+                <group>
+                  <group>
+                    <field name="company_id" groups="base.group_erp_manager"/>
+										<field name="name"/>
+                  </group>
+                  <group>
+                  </group>
+                </group>
+              </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="financiera_aa_config_action">
+      <field name="name">Configuracion</field>
+      <field name="res_model">financiera.aa.config</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="financiera_aa_config_tree"/>
+    </record>
+
+    <!-- Top menu item -->
+    
+    <menuitem name="Aprendizaje Automatico" id="menu_aa" 
+    web_icon="financiera_aprendizaje_automatico,static/description/icon.png"
+    groups="financiera_aprendizaje_automatico.manager"/>
+    
+		<menuitem name="Configuracion" id="menu_aa_config_action" sequence="100"
+			parent="menu_aa" action="financiera_aa_config_action"/>
+
+  </data>
+</openerp>
